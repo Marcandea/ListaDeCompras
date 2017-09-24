@@ -1,15 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Lista de Compras
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item }}
-    </button>  
+    <button ion-item *ngFor="let producto of productos">
+      {{ producto.nombre + " "+producto.id}}
+    </button>
+    <ion-input type="string" [(ngModel)]="num" placeholder="Nombre Producto"></ion-input>  
   </ion-list>
 </ion-content>

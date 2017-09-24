@@ -15,7 +15,7 @@ export class HomePage {
     {id:5,nombre:"Aceite Litro",precio:15}
 ]
 
-  listaCompra=[{idCompra:1,productos:[],total:0}]
+  listaCompra=[{idCompra:1,producto:"",total:0}]
 
   constructor(public navCtrl: NavController) {
 
