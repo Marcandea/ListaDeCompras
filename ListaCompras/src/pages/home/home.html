@@ -7,10 +7,16 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-input type="text" placeholder="Producto" [(ngModel)]="nuevoProducto.nombre"> </ion-input>
+  <br>
+  <ion-input type="number" placeholder="Precio" [(ngModel)]="nuevoProducto.precio"> </ion-input>
+  <button ion-button (click)="insertar()">Agregar Producto</button>
+
   <ion-list>
-    <button ion-item *ngFor="let producto of productos">
-      {{ producto.nombre + " "+producto.id}}
-    </button>
-    <ion-input type="string" [(ngModel)]="num" placeholder="Nombre Producto"></ion-input>  
+    <ion-item *ngFor="let producto of productos">
+      {{producto.nombre +" - Precio: "+producto.precio}}
+    </ion-item>
   </ion-list>
+
+  
 </ion-content>

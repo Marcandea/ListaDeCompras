@@ -7,18 +7,20 @@ import { NgModule } from '@angular/core';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  productos=[
-    {id:1,nombre:"Jabon Uno",precio:12.5},
-    {id:2,nombre:"Arroz Integral",precio:7.5},
-    {id:3,nombre:"Pollo Entero Imba",precio:56},
-    {id:4,nombre:"Atun",precio:6},
-    {id:5,nombre:"Aceite Litro",precio:15}
-]
-
-  listaCompra=[{idCompra:1,producto:"",total:0}]
+  nuevoProducto = {};
+  productos: any;
 
   constructor(public navCtrl: NavController) {
+    this.productos=[
+      {nombre:"Jabon Uno",precio:12.5},
+      {nombre:"Arroz Integral",precio:7.5},
+      {nombre:"Pollo Entero Imba",precio:56},
+    ]
+  }
 
+  insertar(){
+    this.productos.push(this.nuevoProducto);
+    this.nuevoProducto = {};
   }
 
 }
