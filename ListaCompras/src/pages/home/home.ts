@@ -9,18 +9,23 @@ import { NgModule } from '@angular/core';
 export class HomePage {
   nuevoProducto = {};
   productos: any;
-
-  constructor(public navCtrl: NavController) {
+  totalP: any;
+  constructor() {
     this.productos=[
-      {nombre:"Jabon Uno",precio:12.5},
-      {nombre:"Arroz Integral",precio:7.5},
-      {nombre:"Pollo Entero Imba",precio:56},
+      {nombre:"",precio:null}
     ]
   }
-
   insertar(){
     this.productos.push(this.nuevoProducto);
-    this.nuevoProducto = {};
+    this.nuevoProducto={};
+    this.total();
   }
-
+  total():number{
+    let sumaTotal=0;
+    for(let item of this.productos){
+      sumaTotal+=Number.parseInt(item.precio);
+    }
+    this.totalP=sumaTotal;
+    return this.totalP;
+  }
 }

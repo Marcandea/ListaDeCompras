@@ -1,7 +1,7 @@
 {
-  "name": "ListaCompras",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "ListBuy",
+  "version": "1.0.0",
+  "author": "Tecba",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {

@@ -1,22 +1,52 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>
       Lista de Compras
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-input type="text" placeholder="Producto" [(ngModel)]="nuevoProducto.nombre"> </ion-input>
+<ion-content>
+  
+  <ion-item>
+  <ion-label>Producto</ion-label>
+  <ion-input type="text" [(ngModel)]="nuevoProducto.nombre"> </ion-input>
+  </ion-item>
   <br>
-  <ion-input type="number" placeholder="Precio" [(ngModel)]="nuevoProducto.precio"> </ion-input>
-  <button ion-button (click)="insertar()">Agregar Producto</button>
+  <ion-item>
+  <ion-label>Precio</ion-label>
+  <ion-input type="number" [(ngModel)]="nuevoProducto.precio"> </ion-input>
+  </ion-item>
 
-  <ion-list>
-    <ion-item *ngFor="let producto of productos">
-      {{producto.nombre +" - Precio: "+producto.precio}}
-    </ion-item>
-  </ion-list>
+  <div padding>
+    <button color="danger" ion-button block (click)="insertar()">Agregar Producto</button>
+  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+            <ion-navbar color="primary" class="navbar">
+              <ion-title>Producto</ion-title>
+            </ion-navbar>
+            <ion-list>
+                <ion-item *ngFor="let producto of productos">
+                  {{producto.nombre}}
+                </ion-item>
+            </ion-list>
+      </ion-col>
+      <ion-col col-6>
+            <ion-navbar color="primary" class="navbar">
+              <ion-title>Precio</ion-title>
+            </ion-navbar>
+            <ion-list>
+              <ion-item *ngFor="let producto of productos">
+                {{producto.precio}}
+              </ion-item>
+           </ion-list>
 
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
 </ion-content>
